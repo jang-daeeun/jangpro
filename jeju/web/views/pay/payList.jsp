@@ -11,43 +11,100 @@
 <style>
 	input{
 		margin:10px;
+		/* height:25px; */
+	}
+	input:focus{
+		border: 1px solid #0af; 
+		outline: none; 
+		-moz-box-shadow: 0px 0px 15px rgba(0, 170, 255,.5);
+		-webkit-box-shadow: 0px 0px 15px rgba(0, 170, 255,.5);
+		box-shadow: 0px 0px 15px rgba(0, 170, 255,.5);
 	}
 	#payContent div{
 		border:1px solid gray;
 		width:800px;
 		height:500px;
 		margin-bottom:50px;
+		
 	}
 	#payContent{
 		margin-left:500px;
 		margin-top:100px;
 	}
+	#payContent div table{
+		margin-left:30px;
+	}
+	
 </style>
 
 <section id="payContent">
-
+<h2>상품설명</h2>
 <div>
-	상품설명
+	
 </div>
-
+<h2>주문자 정보</h2>
 <div>
-	주문자 정보<br>
-	주문자 성명 <input type="text" value="<%=loginUser2.getUserName()%>"><br>
-	주문자 주소<input type="text" value="<%=loginUser2.getAddress()%>"><br>
-	주문자 전화번호<input type="text" value="<%=loginUser2.getPhone()%>"><br>
+	<table>
+		<tr>
+			<td>
+				주문자 성명
+			</td>
+			<td>
+				<input type="text" value="<%=loginUser2.getUserName()%>">
+			</td>	
+		</tr>
+		<tr>
+			<td>
+				주문자 주소
+			</td>
+			<td>
+				<input type="text" value="<%=loginUser2.getAddress()%>">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				주문자 전화번호
+			</td>
+			<td>
+				<input type="text" value="<%=loginUser2.getPhone()%>">
+			</td>
+		</tr>
+	</table>
+</div>
+<strong>상품수령 정보</strong> <label><input type="checkbox" id="paycheck"> 주문자와 정보가 같으면 체크하세요</label>
+<div>
 	 
-</div>
+	<table>
+		<tr>
+			<td>
+				수령인 성명
+			</td>
+			<td>
+				<input type="text" value="" id="payuser">
+			</td>	
+		</tr>
+		<tr>
+			<td>
+				수령인 주소
+			</td>
+			<td>
+				<input type="text" id="sample6_postcode" placeholder="우편번호" style="">
+				<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+				<input type="text" id="sample6_address" placeholder="주소"><br>
+				<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+				<input type="text" id="sample6_extraAddress" placeholder="참고항목">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				수령인 전화번호
+			</td>
+			<td>
+				<input type="text" id="payphone" value="">
+			</td>
+		</tr>
+	</table>
 
-<div>
-	상품수령 정보 <input type="checkbox" id="paycheck"> 주문자와 정보가 같으면 체크하세요<br>
-	결제자 성명 <input type="text" value="" id="payuser"><br>
-	상품 수령인 전화번호<input type="text" id="payphone" value=""><br>
-	배송지 주소
-	<input type="text" id="sample6_postcode" placeholder="우편번호" style="">
-	<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-	<input type="text" id="sample6_address" placeholder="주소"><br>
-	<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-	<input type="text" id="sample6_extraAddress" placeholder="참고항목">
 	
 </div>
 <div>
